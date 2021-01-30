@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Folder
+  - SystemFolder
+  - Bin
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Slider
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Backgroup_Far
+    uniqueID: 3530012459
+    locked: 0
+  - name: Backgroup_Medium
+    uniqueID: 4031903259
+    locked: 0
+  - name: Displayer
+    uniqueID: 3760447309
+    locked: 0
+  - name: OnDisplayer
+    uniqueID: 47349397
+    locked: 0
+  - name: Slider
+    uniqueID: 3922495931
+    locked: 0
+  - name: Especial
+    uniqueID: 564085973
+    locked: 0
