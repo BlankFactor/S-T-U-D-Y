@@ -17,9 +17,17 @@ public class SystemTime : MonoBehaviour
     void Update()
     {
         string str = string.Empty;
-        str += System.DateTime.Now.Hour + ":" + System.DateTime.Now.Minute;
+        if (System.DateTime.Now.Hour < 10)
+        {
+            str += "0";
+        }
+        str += System.DateTime.Now.Hour;
+        str += ":";
+        if (System.DateTime.Now.Minute < 10)
+        {
+            str += "0";
+        }
+        str += System.DateTime.Now.Minute;
         tmp.text = str;
     }
-
-
 }

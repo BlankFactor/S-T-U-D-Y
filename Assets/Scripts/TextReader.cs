@@ -12,4 +12,13 @@ public static class TextReader
 
         return str[Random.Range(0,str.Length)];
     }
+
+    public static string GetName()
+    {
+        TextAsset txt = Resources.Load("NameList") as TextAsset;
+
+        string[] str = txt.text.Split('\n');
+
+        return str[Random.Range(0, str.Length)];
+    }
 }

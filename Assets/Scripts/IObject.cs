@@ -12,12 +12,18 @@ public class IObject:MonoBehaviour
 
     private void OnMouseDrag()
     {
+        if (GameManager.instance.pause || !GameManager.instance.gameStarted)
+            return;
+
         Vector2 v2 = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         rig2d.MovePosition(v2);
     }
 
     private void OnMouseUp()
     {
+        if (GameManager.instance.pause || !GameManager.instance.gameStarted)
+            return;
+
         Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, 0.3f);
 
         foreach (var i in colliders)

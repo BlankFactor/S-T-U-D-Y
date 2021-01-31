@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public float timeLimitation;
 
     public bool gameStarted = false ;
-    public bool recordingTime = false;
+    public bool pause = true;
 
     [Header("Status(*DO NOT MODIFY*)")]
     public float current_Time;
@@ -22,6 +22,13 @@ public class GameManager : MonoBehaviour
 
     [Header("Other Objects")]
     public Animator ani_Displayer;
+    public GameObject cartoon_Victory;
+    public GameObject cartoon_Fail;
+
+    AudioSource audio_se;
+    public AudioClip sound_victory;
+    public AudioClip sound_gameover;
+
 
     private void Awake()
     {
@@ -37,12 +44,14 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         current_Time = 0;
+
+        audio_se = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!recordingTime || !gameStarted)
+        if (pause || !gameStarted)
             return;
 
         current_Time_Reverse -= Time.deltaTime;
@@ -62,6 +71,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void Play_Gameover()
+    {
+        audio_se.clip = sound_gameover;
+        audio_se.Play();
+    }
+    void Play_Victory()
+    {
+        audio_se.clip = sound_victory;
+        audio_se.Play();
+    }
+
     public void StartGame()
     {
         if (!gameStarted)
@@ -69,18 +89,26 @@ public class GameManager : MonoBehaviour
             gameStarted = true;
             PlayerController.instance.gameObject.SetActive(true);
             ani_Displayer.SetBool("Booting", true);
+            PlayerController.instance.isSearching = true;
         }
     }
 
     public void Victory()
     {
+        gameStarted = false;
+        pause = false;
 
+        cartoon_Victory.SetActive(true);
+        Play_Victory();
     }
 
     public void Failed()
     {
         gameStarted = false;
-        recordingTime = false;
+        pause = false;
+
+        cartoon_Fail.SetActive(true);
+        Play_Gameover();
     }
     
     public void FoundTarget(int _number)
@@ -95,9 +123,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void StartRecording()
+    public void SetPause(bool _v)
     {
-        recordingTime = true;
+        pause = _v;
     }
 
     public Vector2 GetMinAndSec()

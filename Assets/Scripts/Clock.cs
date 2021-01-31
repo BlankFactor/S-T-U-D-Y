@@ -32,7 +32,7 @@ public class Clock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!GameManager.instance.gameStarted || !GameManager.instance.recordingTime)
+        if (!GameManager.instance.gameStarted || GameManager.instance.pause)
             return;
 
         Vector2 ms = GameManager.instance.GetMinAndSec();

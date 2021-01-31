@@ -26,7 +26,7 @@ public class Folder : MonoBehaviour
     public FileType fileType = FileType.Trash;
 
     public bool randomTrashes = false;
-    [Range(0, 20)]
+    [Range(0, 30)]
     public int CountOfTrashes;
 
     public List<GameObject> files;
@@ -102,6 +102,9 @@ public class Folder : MonoBehaviour
 
     private void OnMouseDrag()
     {
+        if (GameManager.instance.pause || !GameManager.instance.gameStarted)
+            return;
+
         Vector2 v2 = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         rig2d.MovePosition(v2);
 
@@ -114,6 +117,9 @@ public class Folder : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (GameManager.instance.pause || !GameManager.instance.gameStarted)
+            return;
+
         lastY = currentY = transform.position.y;
         canPop = false;
         onDrag = true;
@@ -122,6 +128,9 @@ public class Folder : MonoBehaviour
 
     private void OnMouseUp()
     {
+        if (GameManager.instance.pause || !GameManager.instance.gameStarted)
+            return;
+
         canPop = false;
         onDrag = false;
         lastY = currentY = 0;
@@ -169,6 +178,11 @@ public class Folder : MonoBehaviour
             {
                 no.GetComponent<TrashFile>().GetTMP().text = TextReader.GetSystemName();
             }
+            else
+            {
+                no.GetComponent<TrashFile>().GetTMP().text = TextReader.GetName();
+            }
+
             no.transform.localScale = new Vector3(1, 1, 1);
             CountOfTrashes--;
         }

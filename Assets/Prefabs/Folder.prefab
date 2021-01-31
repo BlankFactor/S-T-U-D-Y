@@ -130,16 +130,16 @@ MonoBehaviour:
   randomTrashes: 1
   CountOfTrashes: 20
   files:
-  - {fileID: 2066497995416500617, guid: a9e43ffefbeed734291e1fadefff6b4e, type: 3}
-  - {fileID: 2066497995416500617, guid: a9e43ffefbeed734291e1fadefff6b4e, type: 3}
+  - {fileID: 3408522409369081242, guid: ccaa08c430063654fb9c92ecae39b583, type: 3}
+  - {fileID: 3408522409369081242, guid: ccaa08c430063654fb9c92ecae39b583, type: 3}
   - {fileID: 4056698399882806235}
-  - {fileID: 2066497995416500617, guid: a9e43ffefbeed734291e1fadefff6b4e, type: 3}
-  - {fileID: 2066497995416500617, guid: a9e43ffefbeed734291e1fadefff6b4e, type: 3}
+  - {fileID: 3408522409369081242, guid: ccaa08c430063654fb9c92ecae39b583, type: 3}
+  - {fileID: 3408522409369081242, guid: ccaa08c430063654fb9c92ecae39b583, type: 3}
   - {fileID: 4056698399882806235}
-  - {fileID: 2066497995416500617, guid: a9e43ffefbeed734291e1fadefff6b4e, type: 3}
-  - {fileID: 2066497995416500617, guid: a9e43ffefbeed734291e1fadefff6b4e, type: 3}
+  - {fileID: 3408522409369081242, guid: ccaa08c430063654fb9c92ecae39b583, type: 3}
+  - {fileID: 3408522409369081242, guid: ccaa08c430063654fb9c92ecae39b583, type: 3}
   - {fileID: 4056698399882806235}
-  - {fileID: 2066497995416500617, guid: a9e43ffefbeed734291e1fadefff6b4e, type: 3}
+  - {fileID: 3408522409369081242, guid: ccaa08c430063654fb9c92ecae39b583, type: 3}
   trash: {fileID: 3408522409369081242, guid: ccaa08c430063654fb9c92ecae39b583, type: 3}
   canPop: 0
   onDrag: 0
@@ -300,7 +300,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
